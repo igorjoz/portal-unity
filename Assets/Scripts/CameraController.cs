@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float mouseSensivity = 100f; //czułość myszy
+    [SerializeField] public float mouseSensivity = 100f; //czułość myszy
     public Transform playerBody; //referencja do naszego gracza, obrót kamery będzie obracał naszym graczem
     float xRotation = 0f; //obrót względem osi x kamery
 
