@@ -23,16 +23,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Debug.DrawRay(groundCheck.position, transform.TransformDirection(Vector3.down) * 0.4f, Color.red);
+        //Debug.DrawRay(groundCheck.position, transform.TransformDirection(Vector3.down) * 0.4f, Color.red);
 
-        if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hit, 0.4f, groundMask))
-        {
-            Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
-        }
-        else
-        {
-            Debug.Log("Raycast did not hit anything.");
-        }
+        //if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hit, 0.4f, groundMask))
+        //{
+        //    Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+        //}
+        //else
+        //{
+        //    Debug.Log("Raycast did not hit anything.");
+        //}
 
         if (Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), out hit, 0.4f, groundMask))
             {
@@ -52,11 +52,18 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
         characterController.Move(move * speed * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "PickUp")
+        {
+            hit.gameObject.GetComponent<PickUp>().Picked();
+        }
     }
 }
