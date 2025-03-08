@@ -32,4 +32,9 @@ public class Clock : PickUp
     {
         Rotation();
     }
+
+    public void Rotation()
+    {
+        transform.Rotate(new Vector3(2f, 0, 0));
+    }
 }
