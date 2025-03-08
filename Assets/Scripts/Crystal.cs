@@ -23,4 +23,9 @@ public class Crystal : PickUp
     {
         Rotation();
     }
+
+    public void Rotation()
+    {
+        transform.Rotate(new Vector3(0, 0, 2f));
+    }
 }
