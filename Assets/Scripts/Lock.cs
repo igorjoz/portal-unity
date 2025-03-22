@@ -20,7 +20,7 @@ public class Lock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canOpen && isLocked)
+        if (Input.GetKeyDown(KeyCode.E) && canOpen && !isLocked)
         {
             key.SetBool("useKey", CheckTheKey());
         }

@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     void Stopper()
     {
         timeToEnd--;
-        Debug.Log("Time:" + timeToEnd + "s");
+        //Debug.Log("Time:" + timeToEnd + "s");
 
         if (timeToEnd <= 0)
         {
