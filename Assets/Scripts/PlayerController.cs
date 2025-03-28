@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour
                     speed = 8f;
                     break;
                 case "Low": // teren spowalniaj¹cy
-                    speed = 1f;
+                    speed = 4f;
                     break;
                 case "High": // teren przyspieszaj¹cy
-                    speed = 50f;
+                    speed = 16;
                     break;
             }
         }
