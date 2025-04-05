@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59885826cf068c14282bf79def833652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickClip: {fileID: 8300000, guid: b5b586f4c2c523c428cd7e8db8fdb78a, type: 3}
   color: 2
 --- !u!65 &6765143556197292543
 BoxCollider:

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Net.Sockets;
 using UnityEngine;
 
@@ -10,6 +11,12 @@ public class Lock : MonoBehaviour
     public KeyColor keyColor;
     public bool isLocked = false;
     Animator key;
+
+    public KeyColor color;
+    public Material red;
+    public Material green;
+    public Material gold;
+    public Renderer myLock;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +83,22 @@ public class Lock : MonoBehaviour
         {
             canOpen = false;
             Debug.Log("You can not open the door :(");
+        }
+    }
+
+    void SetMyColor()
+    {
+        switch (color)
+        {
+            case KeyColor.Red:
+                myLock.material = red;
+                break;
+            case KeyColor.Green:
+                myLock.material = green;
+                break;
+            case KeyColor.Gold:
+                myLock.material = gold;
+                break;
         }
     }
 }
