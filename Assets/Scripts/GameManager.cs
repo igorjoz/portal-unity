@@ -17,6 +17,13 @@ public class GameManager : MonoBehaviour
     public int greenKey = 0;
     public int goldKey = 0;
 
+    AudioSource audioSource;
+
+    public AudioClip resumeClip;
+    public AudioClip pauseClip;
+    public AudioClip winClip;
+    public AudioClip loseClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +37,14 @@ public class GameManager : MonoBehaviour
             timeToEnd = 5;
         }
 
+        audioSource = GetComponent<AudioSource>();
         InvokeRepeating("Stopper", 2, 1);
+    }
+
+    public void PlayClip(AudioClip playClip)
+    {
+        audioSource.clip = playClip;
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -59,6 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        PlayClip(pauseClip);
         Debug.Log("Pause game");
         Time.timeScale = 0f;
         isGamePaused = true;
@@ -66,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        PlayClip(resumeClip);
         Debug.Log("Resume game");
         Time.timeScale = 1f;
         isGamePaused = false;

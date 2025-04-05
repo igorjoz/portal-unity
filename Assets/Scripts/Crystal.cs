@@ -5,10 +5,14 @@ using UnityEngine;
 public class Crystal : PickUp
 {
     public int pointsToAdd = 5;
+    public AudioClip playClip;
 
     public override void Picked()
     {
+        GameManager.gameManager.PlayClip(playClip);
+
         GameManager.gameManager.AddPoints(pointsToAdd);
+
         Destroy(this.gameObject);
     }
 

@@ -6,9 +6,12 @@ public class Clock : PickUp
 {
     public bool addTime; // true -> dodawanie czasu; false -> odejmowanie czasu
     public int time = 5;
+    public AudioClip playClip;
 
     public override void Picked()
     {
+        GameManager.gameManager.PlayClip(playClip);
+
         if (addTime)
         {
             GameManager.gameManager.AddTime(time);
