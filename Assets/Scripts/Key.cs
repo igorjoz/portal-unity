@@ -12,6 +12,7 @@ public enum KeyColor
 public class Key : PickUp
 {
     public KeyColor color;
+    public AudioClip playClip;
 
     // Update is called once per frame
     void Update()
@@ -21,6 +22,8 @@ public class Key : PickUp
 
     public override void Picked()
     {
+        GameManager.gameManager.PlayClip(playClip);
+
         GameManager.gameManager.AddKey(color);
 
         Destroy(this.gameObject);

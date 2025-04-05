@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
+  playClip: {fileID: 8300000, guid: b5b586f4c2c523c428cd7e8db8fdb78a, type: 3}
 --- !u!65 &6117303058066932181
 BoxCollider:
   m_ObjectHideFlags: 0

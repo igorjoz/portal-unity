@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsToAdd: 5
+  playClip: {fileID: 8300000, guid: b5b586f4c2c523c428cd7e8db8fdb78a, type: 3}
 --- !u!65 &5647635575755803229
 BoxCollider:
   m_ObjectHideFlags: 0

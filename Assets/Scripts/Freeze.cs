@@ -5,10 +5,14 @@ using UnityEngine;
 public class Freeze : PickUp
 {
     public int freezeTime = 10;
+    public AudioClip playClip;
 
     public override void Picked()
     {
+        GameManager.gameManager.PlayClip(playClip);
+
         GameManager.gameManager.FreezeTime(freezeTime);
+
         Destroy(this.gameObject);
     }
 

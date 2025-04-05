@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addTime: 1
   time: 5
+  playClip: {fileID: 8300000, guid: b5b586f4c2c523c428cd7e8db8fdb78a, type: 3}
 --- !u!65 &6113464666070296764
 BoxCollider:
   m_ObjectHideFlags: 0
