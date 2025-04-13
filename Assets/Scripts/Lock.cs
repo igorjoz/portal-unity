@@ -20,6 +20,11 @@ public class Lock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (canOpen && !isLocked)
+        {
+            GameManager.gameManager.SetUseInfo("Press E to open lock");
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && canOpen && !isLocked)
         {
             key.SetBool("useKey", CheckTheKey());
@@ -39,18 +44,24 @@ public class Lock : MonoBehaviour
         if (GameManager.gameManager.redKey > 0 && keyColor == KeyColor.Red)
         {
             GameManager.gameManager.redKey--;
+            GameManager.gameManager.redKeyText.text = GameManager.gameManager.redKey.ToString();
+
             isLocked = true;
             return true;
         }
         else if (GameManager.gameManager.greenKey > 0 && keyColor == KeyColor.Green)
         {
             GameManager.gameManager.greenKey--;
+            GameManager.gameManager.greenKeyText.text = GameManager.gameManager.greenKey.ToString();
+
             isLocked = true;
             return true;
         }
         else if (GameManager.gameManager.goldKey > 0 && keyColor == KeyColor.Gold)
         {
             GameManager.gameManager.goldKey--;
+            GameManager.gameManager.goldKeyText.text = GameManager.gameManager.goldKey.ToString();
+
             isLocked = true;
             return true;
         }
@@ -75,6 +86,8 @@ public class Lock : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             canOpen = false;
+            GameManager.gameManager.SetUseInfo("");
+
             Debug.Log("You can not open the door :(");
         }
     }
